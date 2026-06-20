@@ -455,14 +455,14 @@ section { padding: 96px 0; }
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .hero-content  { max-width: 100%; order: 1; }
+  .hero-content  { max-width: 100%; }
   .hero-buttons  { justify-content: center; }
-  .hero-orb-wrap { order: 2; }
-  .orb-scene       { width: 240px; height: 280px; }
-  .orb-img-wrap    { width: 180px; height: 180px; }
-  .orb-ambient     { width: 300px; height: 300px; }
-  .orb-ground-halo { width: 120px; bottom: 24px; }
-  .orb-ground-ray  { width: 260px; }
+  .hero-orb-wrap { order: -1; }
+  .orb-scene       { width: 300px; height: 380px; }
+  .orb-img-wrap    { width: 220px; height: 220px; }
+  .orb-ambient     { width: 380px; height: 380px; }
+  .orb-ground-halo { width: 150px; bottom: 32px; }
+  .orb-ground-ray  { width: 320px; }
 }
 
 .hero-badge {
