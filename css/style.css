@@ -1509,7 +1509,8 @@ footer {
   .nav-links { display: none; }
   .nav-right .btn { display: none; }
   .hamburger { display: flex; }
-  .nav-logo img { height: 60px; }
+  .nav-logo img { height: 44px; }
+  .mobile-nav { top: 68px; }
 
   .cards-grid-3 { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
