@@ -388,6 +388,9 @@ section { padding: 96px 0; }
   height: 480px;
   border-radius: 50%;
   overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .orb-img {
