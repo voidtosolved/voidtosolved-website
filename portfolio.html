@@ -191,23 +191,28 @@
 
       </div>
 
-      <!-- ── Wedding Invitation ── -->
+      <!-- ── Before the Bells ── -->
       <div class="project-showcase fade-up" id="wedding" style="margin-top: 48px;">
 
         <div class="project-showcase-header">
           <div class="project-showcase-meta">
             <span class="project-status-badge status-done">
               <span class="status-dot"></span>
-              Completed
+              Live
             </span>
             <span class="project-category-tag">Web Platform</span>
+            <a href="https://beforethebells.com" target="_blank" rel="noopener" class="project-live-link">
+              beforethebells.com
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
           <div class="project-showcase-title-row">
             <div>
-              <h2 class="project-showcase-title">Wedding Invitation</h2>
-              <p class="project-showcase-sub">Digital invitation platform for couples</p>
+              <h2 class="project-showcase-title">Before the Bells</h2>
+              <p class="project-showcase-sub">Digital wedding invitation platform &mdash; a German founder&rsquo;s startup</p>
             </div>
             <div class="project-tech-tags">
+              <span class="project-tag-badge">Next.js</span>
               <span class="project-tag-badge">Web App</span>
               <span class="project-tag-badge">UI/UX Design</span>
               <span class="project-tag-badge">Custom Build</span>
@@ -215,15 +220,111 @@
           </div>
         </div>
 
-        <div class="project-showcase-simple">
-          <div class="project-showcase-image-placeholder">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 8c-2.5 0-4.5-1-6-2.5"/><path d="M12 8c2.5 0 4.5-1 6-2.5"/><path d="M6 5.5C7.5 7 9.5 8 12 8s4.5-1 6-2.5"/><path d="M8 16l-2 4"/><path d="M16 16l2 4"/><path d="M8 16h8"/></svg>
-            <p>WEDDING INVITATION PLATFORM</p>
+        <!-- Image Slider -->
+        <div class="project-slider">
+          <div class="project-slider-track" id="btb-track">
+            <div class="project-slide"><img src="beforethebells/1.webp" alt="Before the Bells &mdash; Template selection" loading="lazy" /></div>
+            <div class="project-slide"><img src="beforethebells/2.webp" alt="Before the Bells &mdash; Invitation view" loading="lazy" /></div>
+            <div class="project-slide"><img src="beforethebells/3.webp" alt="Before the Bells &mdash; RSVP system" loading="lazy" /></div>
+            <div class="project-slide"><img src="beforethebells/4.webp" alt="Before the Bells &mdash; Photo gallery" loading="lazy" /></div>
+            <div class="project-slide"><img src="beforethebells/5.webp" alt="Before the Bells &mdash; Event details" loading="lazy" /></div>
           </div>
-          <div class="project-showcase-simple-body">
-            <p>An elegant digital wedding invitation platform. Couples create beautiful, personalised online invitations &mdash; no printing, no postage, no hassle. Guests can RSVP instantly, get directions, and see all event details in one place.</p>
-            <p>Built with a focus on elegance and simplicity, making the experience feel as special as the occasion itself.</p>
-            <a href="contact.html" class="btn btn-primary">Start a similar project &rarr;</a>
+          <button class="slider-btn slider-prev" aria-label="Previous image" onclick="sliderMove('btb', -1)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="slider-btn slider-next" aria-label="Next image" onclick="sliderMove('btb', 1)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="slider-dots" id="btb-dots">
+            <button class="slider-dot active" onclick="sliderGo('btb', 0)" aria-label="Image 1"></button>
+            <button class="slider-dot" onclick="sliderGo('btb', 1)" aria-label="Image 2"></button>
+            <button class="slider-dot" onclick="sliderGo('btb', 2)" aria-label="Image 3"></button>
+            <button class="slider-dot" onclick="sliderGo('btb', 3)" aria-label="Image 4"></button>
+            <button class="slider-dot" onclick="sliderGo('btb', 4)" aria-label="Image 5"></button>
+          </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="project-showcase-body">
+          <div class="project-showcase-left">
+
+            <div class="project-story-block">
+              <span class="project-story-label">How it started</span>
+              <p>A German entrepreneur came to us with a clear vision: couples should be able to create stunning wedding invitations online without hiring a designer or dealing with print. She wanted a platform where anyone could pick a template, fill in their details, and have something beautiful ready to share in minutes. We built it from scratch, end to end.</p>
+            </div>
+
+            <div class="project-story-block">
+              <span class="project-story-label">What we built</span>
+              <p>Before the Bells lets couples choose from 7 curated templates across three styles &mdash; Luxury, Elegant, and Minimal. Each invitation includes a live RSVP system, smart venue map, photo gallery, event timeline, and instant guest management. One shareable link contains everything. Changes go live instantly, no reprinting, no resending.</p>
+            </div>
+
+            <div class="project-story-block">
+              <span class="project-story-label">What&rsquo;s next for the client</span>
+              <p>The platform launched successfully and is already serving couples. Off the back of this, the client is now planning to expand into a full event shop &mdash; covering birthdays, baby showers, gender reveals, and more. What started as a wedding invitation tool is turning into a full digital event brand. We&rsquo;re part of that journey.</p>
+            </div>
+
+          </div>
+
+          <div class="project-showcase-right">
+
+            <div class="project-feature-list">
+              <h4>What the platform includes</h4>
+              <div class="project-feature-item">
+                <div class="project-feature-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <div>
+                  <strong>7 curated templates</strong>
+                  <span>Luxury, Elegant &amp; Minimal styles &mdash; fully customisable</span>
+                </div>
+              </div>
+              <div class="project-feature-item">
+                <div class="project-feature-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+                </div>
+                <div>
+                  <strong>Live RSVP system</strong>
+                  <span>Guests respond instantly, tracked in real time</span>
+                </div>
+              </div>
+              <div class="project-feature-item">
+                <div class="project-feature-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                  <strong>Smart venue map</strong>
+                  <span>Location, parking &amp; accommodation in one place</span>
+                </div>
+              </div>
+              <div class="project-feature-item">
+                <div class="project-feature-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+                <div>
+                  <strong>Photo gallery &amp; timeline</strong>
+                  <span>Couple photos and full event schedule</span>
+                </div>
+              </div>
+              <div class="project-feature-item">
+                <div class="project-feature-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <div>
+                  <strong>Live editing</strong>
+                  <span>Update details any time &mdash; changes reflect instantly</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-client-note">
+              <div class="project-client-quote">
+                &ldquo;This was exactly the startup I needed. The platform is live, couples love it, and we&rsquo;re already planning the next phase.&rdquo;
+              </div>
+              <div class="project-client-attr">&mdash; Founder, Before the Bells (DE)</div>
+            </div>
+
+            <a href="https://beforethebells.com" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">Visit live site &rarr;</a>
+
           </div>
         </div>
 
@@ -301,9 +402,11 @@ function sliderMove(id, dir) {
 }
 
 sliderInit('saporini', 5);
+sliderInit('btb', 5);
 
 // Auto-advance
 setInterval(() => sliderMove('saporini', 1), 4000);
+setInterval(() => sliderMove('btb', 1), 4200);
 </script>
 
 <script src="js/main.js"></script>
