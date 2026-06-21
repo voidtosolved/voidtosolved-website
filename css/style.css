@@ -740,10 +740,15 @@ section { padding: 96px 0; }
 }
 
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: none;
 }
+.portfolio-grid::-webkit-scrollbar { display: none; }
 
 .project-card {
   background: var(--card-bg);
@@ -751,6 +756,10 @@ section { padding: 96px 0; }
   border-radius: var(--radius);
   overflow: hidden;
   transition: var(--transition);
+  min-width: 320px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 320px;
 }
 .project-card:hover {
   border-color: rgba(26, 107, 255, 0.25);
@@ -1521,7 +1530,7 @@ footer {
   .mobile-nav { top: 104px; }
 
   .cards-grid-3 { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { gap: 16px; }
   .portfolio-full-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
