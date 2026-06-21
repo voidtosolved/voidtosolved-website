@@ -543,19 +543,14 @@ section { padding: 96px 0; }
   position: relative;
   overflow: hidden;
 }
-.card {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-}
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
-  background: radial-gradient(260px circle at var(--mouse-x) var(--mouse-y), rgba(26,107,255,0.10) 0%, transparent 70%);
+  background: linear-gradient(135deg, rgba(26,107,255,0.04) 0%, transparent 60%);
   opacity: 0;
   transition: opacity var(--transition);
-  pointer-events: none;
 }
 .card:hover {
   border-color: rgba(26, 107, 255, 0.3);
@@ -1536,150 +1531,4 @@ footer {
   .container { padding: 0 16px; }
   .form-card { padding: 24px; }
   .languages-inner { flex-direction: column; gap: 24px; }
-}
-
-/* ============================
-   INTERACTIVE ENHANCEMENTS
-   ============================ */
-
-/* Scroll Progress Bar */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--solved-blue), #60a5fa, var(--muted-blue));
-  z-index: 9999;
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 10px rgba(26, 107, 255, 0.7);
-  pointer-events: none;
-}
-
-/* Custom Cursor */
-.cursor-glow {
-  position: fixed;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(26, 107, 255, 0.65);
-  pointer-events: none;
-  z-index: 9997;
-  left: 0; top: 0;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: width 0.22s ease, height 0.22s ease, border-color 0.22s ease,
-              background 0.22s ease, opacity 0.3s ease;
-}
-.cursor-dot {
-  position: fixed;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--solved-blue);
-  pointer-events: none;
-  z-index: 9998;
-  left: 0; top: 0;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.cursor-glow.cursor-hover {
-  width: 44px;
-  height: 44px;
-  border-color: rgba(26, 107, 255, 0.45);
-  background: rgba(26, 107, 255, 0.07);
-}
-
-/* Hero Particles */
-canvas.hero-particles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.65;
-}
-
-/* Service card cursor spotlight */
-.service-card {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: radial-gradient(260px circle at var(--mouse-x) var(--mouse-y), rgba(26,107,255,0.09) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-  z-index: 0;
-}
-.service-card:hover::before { opacity: 1; }
-
-/* Project card cursor spotlight */
-.project-card {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-  position: relative;
-}
-.project-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: radial-gradient(260px circle at var(--mouse-x) var(--mouse-y), rgba(26,107,255,0.09) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-  z-index: 0;
-}
-.project-card:hover::before { opacity: 1; }
-
-/* Button spotlight on hover */
-.btn-primary {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-  overflow: hidden;
-}
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(80px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.18) 0%, transparent 65%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-.btn-primary:hover::after { opacity: 1; }
-
-/* Step number glow on hover */
-.step-number {
-  transition: box-shadow var(--transition), background var(--transition);
-  cursor: default;
-}
-.step:hover .step-number {
-  box-shadow: 0 0 36px rgba(26, 107, 255, 0.55), 0 0 0 5px rgba(26, 107, 255, 0.1);
-  background: rgba(26, 107, 255, 0.12);
-}
-
-/* 3D tilt — enable hardware acceleration */
-.card, .service-card, .project-card, .team-card {
-  will-change: transform;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3, .fade-up-delay-4 {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-  canvas.hero-particles, .cursor-glow, .cursor-dot, #scroll-progress { display: none; }
-  .orb-ambient, .orb-float, .orb-ground-halo { animation: none !important; }
-  .card, .service-card, .project-card, .team-card { will-change: auto; }
 }
