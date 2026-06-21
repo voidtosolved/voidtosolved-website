@@ -1593,6 +1593,41 @@ footer {
   text-transform: uppercase;
   color: var(--text-muted);
 }
+/* Portfolio section divider */
+.portfolio-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 72px 0 52px;
+}
+.portfolio-divider-line { flex: 1; height: 1px; background: var(--card-border); }
+.portfolio-divider-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 4px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+}
+.brand-deliverables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.brand-deliverable-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--solved-blue);
+  background: var(--glow-blue);
+  border: 1px solid rgba(26,107,255,0.2);
+  border-radius: 100px;
+  padding: 5px 12px;
+}
+
 .project-live-link {
   display: inline-flex;
   align-items: center;
