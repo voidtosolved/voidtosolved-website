@@ -207,9 +207,9 @@ document.head.appendChild(style);
     });
   }
 
-  // ── Hero Particle Field (skip if Three.js scene canvas exists) ──
+  // ── Hero Particle Field ──
   const hero = document.querySelector('.hero');
-  if (hero && !reducedMotion && !document.getElementById('hero-canvas')) {
+  if (hero && !reducedMotion) {
     const canvas = document.createElement('canvas');
     canvas.className = 'hero-particles';
     hero.insertBefore(canvas, hero.firstChild);

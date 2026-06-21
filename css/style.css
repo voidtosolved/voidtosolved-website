@@ -1602,17 +1602,6 @@ canvas.hero-particles {
   opacity: 0.65;
 }
 
-/* Three.js Hero Canvas */
-canvas.hero-canvas-3d {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.75;
-}
-
 /* Service card cursor spotlight */
 .service-card {
   --mouse-x: 50%;
