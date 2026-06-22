@@ -681,7 +681,15 @@
 const sliders = {};
 
 function sliderInit(id, total) {
-  sliders[id] = { current: 0, total };
+  const track = document.getElementById(id + '-track');
+  if (!track) return;
+  const container = track.parentElement;
+  const w = container.offsetWidth;
+  Array.from(track.children).forEach(slide => {
+    slide.style.width = w + 'px';
+    slide.style.minWidth = w + 'px';
+  });
+  sliders[id] = { current: 0, total, container };
 }
 
 function sliderGo(id, index) {
@@ -690,7 +698,10 @@ function sliderGo(id, index) {
   s.current = index;
   const track = document.getElementById(id + '-track');
   const dots = document.querySelectorAll('#' + id + '-dots .slider-dot');
-  if (track) track.style.transform = 'translateX(-' + (index * 100) + '%)';
+  if (track) {
+    const w = s.container.offsetWidth;
+    track.style.transform = 'translateX(-' + (index * w) + 'px)';
+  }
   dots.forEach((d, i) => d.classList.toggle('active', i === index));
 }
 
@@ -701,18 +712,36 @@ function sliderMove(id, dir) {
   sliderGo(id, s.current);
 }
 
-sliderInit('saporini', 5);
-sliderInit('boa', 3);
-sliderInit('btb', 5);
-sliderInit('fore', 5);
-sliderInit('bond', 4);
+// Re-measure on resize (e.g. orientation change)
+window.addEventListener('resize', () => {
+  Object.keys(sliders).forEach(id => {
+    const s = sliders[id];
+    const track = document.getElementById(id + '-track');
+    if (!s || !track) return;
+    const w = s.container.offsetWidth;
+    Array.from(track.children).forEach(slide => {
+      slide.style.width = w + 'px';
+      slide.style.minWidth = w + 'px';
+    });
+    sliderGo(id, s.current);
+  });
+}, { passive: true });
 
-// Auto-advance
-setInterval(() => sliderMove('saporini', 1), 4000);
-setInterval(() => sliderMove('fore', 1), 4300);
-setInterval(() => sliderMove('btb', 1), 4200);
-setInterval(() => sliderMove('boa', 1), 4600);
-setInterval(() => sliderMove('bond', 1), 3900);
+// Init after layout is painted
+requestAnimationFrame(() => {
+  sliderInit('saporini', 5);
+  sliderInit('boa', 3);
+  sliderInit('btb', 5);
+  sliderInit('fore', 5);
+  sliderInit('bond', 4);
+
+  // Auto-advance
+  setInterval(() => sliderMove('saporini', 1), 4000);
+  setInterval(() => sliderMove('fore', 1), 4300);
+  setInterval(() => sliderMove('btb', 1), 4200);
+  setInterval(() => sliderMove('boa', 1), 4600);
+  setInterval(() => sliderMove('bond', 1), 3900);
+});
 </script>
 
 <script src="js/main.js"></script>
